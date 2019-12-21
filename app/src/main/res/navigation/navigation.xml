@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/jsonFragment"
+        android:name="com.example.truthordare.json.JsonFragment"
+        android:label="json_fragment"
+        tools:layout="@layout/json_fragment" />
+    <fragment
+        android:id="@+id/rankFragment"
+        android:name="com.example.truthordare.fragment.RankFragment"
+        android:label="rank_fragment"
+        tools:layout="@layout/rank_fragment" >
+        <action
+            android:id="@+id/action_rankFragment_to_jsonFragment"
+            app:destination="@id/jsonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.truthordare.fragment.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_rankFragment"
+            app:destination="@id/rankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.truthordare.fragment.StartFragment"
+        android:label="StartFragment" >
+        <action
+            android:id="@+id/action_startFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>

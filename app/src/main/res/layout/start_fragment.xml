@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+        <data>
+            <variable
+                name="model"
+                type="com.example.truthordare.fragment.StartViewModel" />
+        </data>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".StartActivity">
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="180dp"
+                android:layout_height="60dp"
+                android:text="@string/next"
+                android:background="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.857"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnAdd"
+                app:layout_constraintVertical_bias="0.825" />
+
+            <EditText
+                android:id="@+id/setPlayer"
+                android:layout_width="370dp"
+                android:layout_height="58dp"
+                android:gravity="center"
+                android:hint="@string/addPlayers"
+                android:inputType="text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.487"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.164" />
+
+            <Button
+                android:id="@+id/btnAdd"
+                android:layout_width="180dp"
+                android:layout_height="60dp"
+                android:background="@color/colorAccent"
+                android:text="@string/add"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/setPlayer"
+                app:layout_constraintVertical_bias="0.045"
+                tools:text="Add" />
+
+            <TextView
+                android:id="@+id/players"
+                android:layout_width="300dp"
+                android:layout_height="267dp"
+                android:gravity="center"
+                android:text="TextView"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/btnNext"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnAdd" />
+
+            <TextView
+                android:id="@+id/transformation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{model.stringPlayer}"
+                tools:layout_editor_absoluteX="55dp"
+                tools:layout_editor_absoluteY="614dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

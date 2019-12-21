@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="jsonModel"
+            type="com.example.truthordare.api.JsonModel" />
+        <variable
+            name="clickListener"
+            type="com.example.truthordare.json.JsonListener" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="@{()->clickListener.onClick(jsonModel)}">
+
+        <TextView
+            android:id="@+id/user_Id"
+            style="@style/Base.TextAppearance.AppCompat.Headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            app:jsonUserId="@{jsonModel}"/>
+
+        <TextView
+            android:id="@+id/another_id"
+            style="@style/Base.TextAppearance.AppCompat.Headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            app:jsonId="@{jsonModel}"/>
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/Base.TextAppearance.AppCompat.Headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            app:jsonTitle="@{jsonModel}"/>
+
+        <TextView
+            android:id="@+id/body"
+            style="@style/Base.TextAppearance.AppCompat.Headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            app:jsonBody="@{jsonModel}"/>
+
+    </LinearLayout>
+</layout>
